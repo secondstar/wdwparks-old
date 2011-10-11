@@ -1,5 +1,6 @@
 class Park < ActiveRecord::Base
   has_many :lands
+  has_many :attractions
   def self.get_list_of_parks(source)
     # returns park names and permalinks 
     
