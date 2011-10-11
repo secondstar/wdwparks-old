@@ -1,2 +1,26 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+Although most content will be generated somewhere else on the internet, this content will be written within the DB 
+with a cron command before it is presented to the website guest.
+
+Park
+==
+Name and other information directly related to the parks
+
+Land
+==
+A different section of each park.  The name and other directly related info.
+
+Attraction
+==
+Cool particulars pertaining to an individual ride or show
+
+Addendum
+==
+Additional facts or links attached to the Attraction or the land by a polymorphic relationship.
+
+Photo
+==
+Responsible for pulling and tracking the photo url's for districts and eateries.  Rake tasks will collect locations of each photo to be used.  The resource depends on District and Eatery for search criterea.
+
+Video
+===
+Responsible for pulling and tracking the photo url's for districts and eateries.  Rake tasks will collect locations of each photo to be used.  The resource depends on District and Eatery for search criterea.

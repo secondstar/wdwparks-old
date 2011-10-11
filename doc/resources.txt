@@ -1,0 +1,9 @@
+Park: name:string permalink:string
+
+Land: name:string park_id:string
+
+Attraction: permalink:string short_name:string when_to_go:string scheduled_code:string reflective_captioning:string physical_considerations:string open_not_so_scary:string open_emh_evening:string name:string duration:string average_wait_assumes:string scope_and_scale_code:string minor_attraction:string intense:string video_captioning:string open_very_merry:string not_to_be_missed:string assistive_listening:string wheelchair_transfer_code:string must_transfer_from_wheelchair:string special_needs:string single_rider:string seasonal:string handheld_captioning:string frightening:string no_service_animals:string loading_speed:string fastpass_booth:string what_it_is:string ultimate_code:string open_emh_morning:string category_code:string sign_language:string service_animal_check:string rider_swap:string average_wait_per_hundred:string short_name:string probable_wait_time:string ultimate_task:string time_zone:string audio_description:string height_restriction:string extinct_on:date opened_on:date land_id:integer park_id:integer
+
+Photo: url:string farm:string server:string secret:string owner:integer  photogenic_id:string photogenic_type:string flickr_id:string title:string
+
+Video: url:string youtube_searchterm:string feature_id:integer feature_type:string

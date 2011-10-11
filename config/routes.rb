@@ -1,4 +1,8 @@
 Wdwparks::Application.routes.draw do
+  resources :lands
+
+  resources :parks
+
   match '/auth/:provider/callback', :to => 'sessions#callback'
 
   # The priority is based upon order of creation:
