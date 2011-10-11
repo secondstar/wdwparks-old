@@ -7,3 +7,14 @@ Attraction: permalink:string short_name:string when_to_go:string scheduled_code:
 Photo: url:string farm:string server:string secret:string owner:integer  photogenic_id:string photogenic_type:string flickr_id:string title:string
 
 Video: url:string youtube_searchterm:string feature_id:integer feature_type:string
+
+Scrape
+=
+http://touringplans.com/walt-disney-world/parks div.dv_titleboxtxt # class of root element that's needed to get the name and permalink of the park
+
+http://touringplans.com/magic-kingdom/lands  div.dv_titleboxtxt # class of root element that's needed to get the name and permalink of the land
+
+JSON
+=
+http://touringplans.com/magic-kingdom/attractions.json # list of attractions
+http://touringplans.com/magic-kingdom/attractions/astro-orbiter.json # details of an attraction

@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Url:</b>
+  <%= @photo.url %>
+</p>
+
+<p>
+  <b>Farm:</b>
+  <%= @photo.farm %>
+</p>
+
+<p>
+  <b>Server:</b>
+  <%= @photo.server %>
+</p>
+
+<p>
+  <b>Secret:</b>
+  <%= @photo.secret %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%= @photo.owner %>
+</p>
+
+<p>
+  <b>Photogenic:</b>
+  <%= @photo.photogenic_id %>
+</p>
+
+<p>
+  <b>Photogenic type:</b>
+  <%= @photo.photogenic_type %>
+</p>
+
+<p>
+  <b>Flickr:</b>
+  <%= @photo.flickr_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @photo.title %>
+</p>
+
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>

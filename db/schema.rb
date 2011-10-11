@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111011003223) do
+ActiveRecord::Schema.define(:version => 20111011021955) do
 
   create_table "attractions", :force => true do |t|
     t.string   "permalink"
@@ -72,6 +72,20 @@ ActiveRecord::Schema.define(:version => 20111011003223) do
   create_table "parks", :force => true do |t|
     t.string   "name"
     t.string   "permalink"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string   "url"
+    t.string   "farm"
+    t.string   "server"
+    t.string   "secret"
+    t.integer  "owner"
+    t.string   "photogenic_id"
+    t.string   "photogenic_type"
+    t.string   "flickr_id"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

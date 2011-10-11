@@ -14,6 +14,9 @@ class ParksController < ApplicationController
   # GET /parks/1.xml
   def show
     @park = Park.find(params[:id])
+    @rides = @park.attractions.where(:category_code  => "ride")
+    @shows = @park.attractions.where(:category_code  => "continuous_show")
+    
 
     respond_to do |format|
       format.html # show.html.erb
