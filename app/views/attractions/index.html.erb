@@ -1,0 +1,111 @@
+<h1>Listing attractions</h1>
+
+<table>
+  <tr>
+    <th>Permalink</th>
+    <th>Short name</th>
+    <th>When to go</th>
+    <th>Scheduled code</th>
+    <th>Reflective captioning</th>
+    <th>Physical considerations</th>
+    <th>Open not so scary</th>
+    <th>Open emh evening</th>
+    <th>Name</th>
+    <th>Duration</th>
+    <th>Average wait assumes</th>
+    <th>Scope and scale code</th>
+    <th>Minor attraction</th>
+    <th>Intense</th>
+    <th>Video captioning</th>
+    <th>Open very merry</th>
+    <th>Not to be missed</th>
+    <th>Assistive listening</th>
+    <th>Wheelchair transfer code</th>
+    <th>Must transfer from wheelchair</th>
+    <th>Special needs</th>
+    <th>Single rider</th>
+    <th>Seasonal</th>
+    <th>Handheld captioning</th>
+    <th>Frightening</th>
+    <th>No service animals</th>
+    <th>Loading speed</th>
+    <th>Fastpass booth</th>
+    <th>What it is</th>
+    <th>Ultimate code</th>
+    <th>Open emh morning</th>
+    <th>Category code</th>
+    <th>Sign language</th>
+    <th>Service animal check</th>
+    <th>Rider swap</th>
+    <th>Average wait per hundred</th>
+    <th>Probable wait time</th>
+    <th>Ultimate task</th>
+    <th>Time zone</th>
+    <th>Audio description</th>
+    <th>Height restriction</th>
+    <th>Extinct on</th>
+    <th>Opened on</th>
+    <th>Land</th>
+    <th>Park</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @attractions.each do |attraction| %>
+  <tr>
+    <td><%= attraction.permalink %></td>
+    <td><%= attraction.short_name %></td>
+    <td><%= attraction.when_to_go %></td>
+    <td><%= attraction.scheduled_code %></td>
+    <td><%= attraction.reflective_captioning %></td>
+    <td><%= attraction.physical_considerations %></td>
+    <td><%= attraction.open_not_so_scary %></td>
+    <td><%= attraction.open_emh_evening %></td>
+    <td><%= attraction.name %></td>
+    <td><%= attraction.duration %></td>
+    <td><%= attraction.average_wait_assumes %></td>
+    <td><%= attraction.scope_and_scale_code %></td>
+    <td><%= attraction.minor_attraction %></td>
+    <td><%= attraction.intense %></td>
+    <td><%= attraction.video_captioning %></td>
+    <td><%= attraction.open_very_merry %></td>
+    <td><%= attraction.not_to_be_missed %></td>
+    <td><%= attraction.assistive_listening %></td>
+    <td><%= attraction.wheelchair_transfer_code %></td>
+    <td><%= attraction.must_transfer_from_wheelchair %></td>
+    <td><%= attraction.special_needs %></td>
+    <td><%= attraction.single_rider %></td>
+    <td><%= attraction.seasonal %></td>
+    <td><%= attraction.handheld_captioning %></td>
+    <td><%= attraction.frightening %></td>
+    <td><%= attraction.no_service_animals %></td>
+    <td><%= attraction.loading_speed %></td>
+    <td><%= attraction.fastpass_booth %></td>
+    <td><%= attraction.what_it_is %></td>
+    <td><%= attraction.ultimate_code %></td>
+    <td><%= attraction.open_emh_morning %></td>
+    <td><%= attraction.category_code %></td>
+    <td><%= attraction.sign_language %></td>
+    <td><%= attraction.service_animal_check %></td>
+    <td><%= attraction.rider_swap %></td>
+    <td><%= attraction.average_wait_per_hundred %></td>
+    <td><%= attraction.probable_wait_time %></td>
+    <td><%= attraction.ultimate_task %></td>
+    <td><%= attraction.time_zone %></td>
+    <td><%= attraction.audio_description %></td>
+    <td><%= attraction.height_restriction %></td>
+    <td><%= attraction.extinct_on %></td>
+    <td><%= attraction.opened_on %></td>
+    <td><%= attraction.land_id %></td>
+    <td><%= attraction.park_id %></td>
+    <td><%= link_to 'Show', attraction %></td>
+    <td><%= link_to 'Edit', edit_attraction_path(attraction) %></td>
+    <td><%= link_to 'Destroy', attraction, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Attraction', new_attraction_path %>

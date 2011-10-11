@@ -1,4 +1,6 @@
 Wdwparks::Application.routes.draw do
+  resources :attractions
+
   resources :lands
 
   resources :parks

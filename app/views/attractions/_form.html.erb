@@ -1,0 +1,197 @@
+<%= form_for(@attraction) do |f| %>
+  <% if @attraction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@attraction.errors.count, "error") %> prohibited this attraction from being saved:</h2>
+
+      <ul>
+      <% @attraction.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :permalink %><br />
+    <%= f.text_field :permalink %>
+  </div>
+  <div class="field">
+    <%= f.label :short_name %><br />
+    <%= f.text_field :short_name %>
+  </div>
+  <div class="field">
+    <%= f.label :when_to_go %><br />
+    <%= f.text_field :when_to_go %>
+  </div>
+  <div class="field">
+    <%= f.label :scheduled_code %><br />
+    <%= f.text_field :scheduled_code %>
+  </div>
+  <div class="field">
+    <%= f.label :reflective_captioning %><br />
+    <%= f.text_field :reflective_captioning %>
+  </div>
+  <div class="field">
+    <%= f.label :physical_considerations %><br />
+    <%= f.text_field :physical_considerations %>
+  </div>
+  <div class="field">
+    <%= f.label :open_not_so_scary %><br />
+    <%= f.text_field :open_not_so_scary %>
+  </div>
+  <div class="field">
+    <%= f.label :open_emh_evening %><br />
+    <%= f.text_field :open_emh_evening %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :duration %><br />
+    <%= f.text_field :duration %>
+  </div>
+  <div class="field">
+    <%= f.label :average_wait_assumes %><br />
+    <%= f.text_field :average_wait_assumes %>
+  </div>
+  <div class="field">
+    <%= f.label :scope_and_scale_code %><br />
+    <%= f.text_field :scope_and_scale_code %>
+  </div>
+  <div class="field">
+    <%= f.label :minor_attraction %><br />
+    <%= f.text_field :minor_attraction %>
+  </div>
+  <div class="field">
+    <%= f.label :intense %><br />
+    <%= f.text_field :intense %>
+  </div>
+  <div class="field">
+    <%= f.label :video_captioning %><br />
+    <%= f.text_field :video_captioning %>
+  </div>
+  <div class="field">
+    <%= f.label :open_very_merry %><br />
+    <%= f.text_field :open_very_merry %>
+  </div>
+  <div class="field">
+    <%= f.label :not_to_be_missed %><br />
+    <%= f.text_field :not_to_be_missed %>
+  </div>
+  <div class="field">
+    <%= f.label :assistive_listening %><br />
+    <%= f.text_field :assistive_listening %>
+  </div>
+  <div class="field">
+    <%= f.label :wheelchair_transfer_code %><br />
+    <%= f.text_field :wheelchair_transfer_code %>
+  </div>
+  <div class="field">
+    <%= f.label :must_transfer_from_wheelchair %><br />
+    <%= f.text_field :must_transfer_from_wheelchair %>
+  </div>
+  <div class="field">
+    <%= f.label :special_needs %><br />
+    <%= f.text_field :special_needs %>
+  </div>
+  <div class="field">
+    <%= f.label :single_rider %><br />
+    <%= f.text_field :single_rider %>
+  </div>
+  <div class="field">
+    <%= f.label :seasonal %><br />
+    <%= f.text_field :seasonal %>
+  </div>
+  <div class="field">
+    <%= f.label :handheld_captioning %><br />
+    <%= f.text_field :handheld_captioning %>
+  </div>
+  <div class="field">
+    <%= f.label :frightening %><br />
+    <%= f.text_field :frightening %>
+  </div>
+  <div class="field">
+    <%= f.label :no_service_animals %><br />
+    <%= f.text_field :no_service_animals %>
+  </div>
+  <div class="field">
+    <%= f.label :loading_speed %><br />
+    <%= f.text_field :loading_speed %>
+  </div>
+  <div class="field">
+    <%= f.label :fastpass_booth %><br />
+    <%= f.text_field :fastpass_booth %>
+  </div>
+  <div class="field">
+    <%= f.label :what_it_is %><br />
+    <%= f.text_field :what_it_is %>
+  </div>
+  <div class="field">
+    <%= f.label :ultimate_code %><br />
+    <%= f.text_field :ultimate_code %>
+  </div>
+  <div class="field">
+    <%= f.label :open_emh_morning %><br />
+    <%= f.text_field :open_emh_morning %>
+  </div>
+  <div class="field">
+    <%= f.label :category_code %><br />
+    <%= f.text_field :category_code %>
+  </div>
+  <div class="field">
+    <%= f.label :sign_language %><br />
+    <%= f.text_field :sign_language %>
+  </div>
+  <div class="field">
+    <%= f.label :service_animal_check %><br />
+    <%= f.text_field :service_animal_check %>
+  </div>
+  <div class="field">
+    <%= f.label :rider_swap %><br />
+    <%= f.text_field :rider_swap %>
+  </div>
+  <div class="field">
+    <%= f.label :average_wait_per_hundred %><br />
+    <%= f.text_field :average_wait_per_hundred %>
+  </div>
+  <div class="field">
+    <%= f.label :probable_wait_time %><br />
+    <%= f.text_field :probable_wait_time %>
+  </div>
+  <div class="field">
+    <%= f.label :ultimate_task %><br />
+    <%= f.text_field :ultimate_task %>
+  </div>
+  <div class="field">
+    <%= f.label :time_zone %><br />
+    <%= f.text_field :time_zone %>
+  </div>
+  <div class="field">
+    <%= f.label :audio_description %><br />
+    <%= f.text_field :audio_description %>
+  </div>
+  <div class="field">
+    <%= f.label :height_restriction %><br />
+    <%= f.text_field :height_restriction %>
+  </div>
+  <div class="field">
+    <%= f.label :extinct_on %><br />
+    <%= f.date_select :extinct_on %>
+  </div>
+  <div class="field">
+    <%= f.label :opened_on %><br />
+    <%= f.date_select :opened_on %>
+  </div>
+  <div class="field">
+    <%= f.label :land_id %><br />
+    <%= f.text_field :land_id %>
+  </div>
+  <div class="field">
+    <%= f.label :park_id %><br />
+    <%= f.text_field :park_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
