@@ -1,24 +1,31 @@
 class Land < ActiveRecord::Base
   belongs_to :park
   has_many :attractions
-  
+
   # Overall method: Get a list, save the list, and then itereate through the list to update the individual lands.
-  def self.get_list_of_lands_in_the_current_park_from_touringplans_com(touringplans_com_permalink)
-    # returns park names and permalinks 
+  def self.get_list_of_lands_in_the_current_park_from_touringplans_com(wdwparks_permalink)
+    # returns land names and permalinks 
+    require 'nokogiri'
+    require 'open-uri'
     
+    url = "http://touringplans.com/#{wdwparks_permalink}/lands"
+    puts url
+    doc = Nokogiri::HTML(open(url))
+    @lands = doc.css(".dv_titleboxtxt a")     
+    return @lands
   end
   
-  def self.save_list_of_lands_in_the_current_park_from_touringplans_com(hash_array_from_touringplans_com)
+  def self.save_current_list_of_lands_from_touringplans_com(hash_array_from_touringplans_com)
     # mock this in the test
-    # returns the details of the named park
-  end
-  
-  def self.obtain_latest_info_from_touringplans_com(wdwparks_permalink)
-    # pulls the latest info for one land from touringplans.com
-    # stub this in test with factory_girl
-    # iterate through the collection of parks with find_or_initialize_by_permalink
-    # then iterate through each park with the latest park info from obtain_park_info
-    # then save
+    # returns the details of the named land
+    @lands = hash_array_from_touringplans_com
+    @lands.each do |land|
+      puts "link:  #{land['permalink']}"
+      @land = Land.find_or_initialize_by_permalink(land['permalink'])
+      @land.name     = land['name']
+      @land.park_id  = land['park_id']
+      @land.save!
+    end
   end
   
 end

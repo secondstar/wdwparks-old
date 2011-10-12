@@ -36,5 +36,6 @@ gem "cucumber-rails", :group => [:development, :test]
 gem "capybara", :group => [:development, :test]
 gem "jquery-rails"
 gem "omniauth", "~> 0.2.0"
+# gem "nokogiri", "~> 1.4.7" ## dependency of omniauth
 gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
 gem "haml", ">= 3.0.0"
