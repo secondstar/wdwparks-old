@@ -18,11 +18,16 @@ class Park < ActiveRecord::Base
   def self.save_list_of_parks_in_WDW(hash_array_from_get_list_of_parks)
     @parks = hash_array_from_get_list_of_parks
     @parks.each do |park|
-      puts "link:  #{park['permalink']}"
+      # puts "link:  #{park['permalink']}"
       @park = Park.find_or_initialize_by_permalink(park['permalink'])
       @park.name    = park['name']
       @park.rating  = park['rating']
       @park.credit = park['credit']
+      if @park.save
+        puts "Saved:  #{@park.name}"
+      else
+        puts "Failed: #{@park.name} -- @park.errors"
+      end
       @park.save!
     end
   end
