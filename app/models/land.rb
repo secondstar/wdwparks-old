@@ -15,16 +15,20 @@ class Land < ActiveRecord::Base
     return @lands
   end
   
-  def self.save_current_list_of_lands_from_touringplans_com(hash_array_from_touringplans_com)
+  def self.save_current_list_of_lands_from_touringplans_com(wdwparks_permalink_of_park, hash_array_from_touringplans_com)
     # mock this in the test
     # returns the details of the named land
+    @park = Park.find_by_permalink(wdwparks_permalink_of_park)
     @lands = hash_array_from_touringplans_com
     @lands.each do |land|
-      puts "link:  #{land['permalink']}"
-      @land = Land.find_or_initialize_by_permalink(land['permalink'])
-      @land.name     = land['name']
-      @land.park_id  = land['park_id']
-      @land.save!
+      @land         = Land.find_or_initialize_by_permalink(land.attributes["href"].value)
+      @land.name    = land.text
+      @land.park    = Park.find_by_permalink(wdwparks_permalink_of_park)
+      if @land.save
+        puts "Saved:  #{@land.name}, #{@land.permalink}"
+      else
+        puts "Failed: #{@land.name} -- #{@land.errors}"
+      end
     end
   end
   

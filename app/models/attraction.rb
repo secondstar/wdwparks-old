@@ -38,13 +38,13 @@ class Attraction < ActiveRecord::Base
     # using httparty
     @attraction = Attraction.find_by_permalink(wdwparks_attraction_permalink)
     @park = @attraction.park
-    
+    # puts "Park: #{@park.permalink}, Attraction: #{@attraction.name}, permalink #{wdwparks_attraction_permalink}"
     url = "/#{@park.permalink}/attractions/#{@attraction.permalink}.json"
     puts "#{url}"
     return get(url).parsed_response
     
   end
-  ### START HERE!!
+
   def self.save_latest_info_from_touringplans_com(wdwparks_attraction_permalink, hash_array_of_attraction_from_touringplans_com)
     if @attraction.update_attributes(hash_array_of_attraction_from_touringplans_com)
       puts "#{@attraction.name} successfully updated"

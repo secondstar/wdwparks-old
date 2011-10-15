@@ -26,9 +26,8 @@ class Park < ActiveRecord::Base
       if @park.save
         puts "Saved:  #{@park.name}"
       else
-        puts "Failed: #{@park.name} -- @park.errors"
+        puts "Failed: #{@park.name} -- #{@park.errors}"
       end
-      @park.save!
     end
   end
   
