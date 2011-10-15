@@ -3,12 +3,12 @@ class Land < ActiveRecord::Base
   has_many :attractions
 
   # Overall method: Get a list, save the list, and then itereate through the list to update the individual lands.
-  def self.get_list_of_lands_in_the_current_park_from_touringplans_com(wdwparks_permalink)
+  def self.get_list_of_lands_in_the_current_park_from_touringplans_com(wdwparks_permalink_of_park)
     # returns land names and permalinks 
     require 'nokogiri'
     require 'open-uri'
     
-    url = "http://touringplans.com/#{wdwparks_permalink}/lands"
+    url = "http://touringplans.com/#{wdwparks_permalink_of_park}/lands"
     puts url
     doc = Nokogiri::HTML(open(url))
     @lands = doc.css(".dv_titleboxtxt a")     
